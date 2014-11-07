@@ -2,6 +2,8 @@
 # "This is a dice simulation program. Written by Frank Huang."
 
 import random
+import specialInput
 
-answer = random.randint(1,6)
+side = specialInput.int_input("How many sides on your dice?")
+answer = random.randint(1,side)
 print("The dice shows: " + str(answer))

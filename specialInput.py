@@ -14,23 +14,39 @@ def name_input(prompt):
 			name = name[:10]
 			return name
 
-def int_input(prompt):
+def int_inputside(prompt):
 	"""
-		Allows the user to input an integer, and asks for another try if none integer id entered.
+		Allows the user to input an integer, which should be bigger than 3, and asks for another try if none integer is entered.
 	"""
 	while True:
 		answer = raw_input(prompt)
 		try:
 			answer = int(answer)
 			if answer < 4:
-				print("Your dice should have more than 2 faces.")
+				print("Your dice should have more than 3 faces.")
 			else:
 				break
 		except ValueError:
-			print("The sides you enter is not a interger.")
+			print("The sides you enter is not an interger.")
 	
 	return answer
-			
+
+def int_inputdice(prompt):
+	"""
+		Allows the user to input an integer, which should be bigger than 0, and asks for another try if none integer is entered.
+	"""
+	while True:
+		answer = raw_input(prompt)
+		try:
+			answer = int(answer)
+			if answer < 1:
+				print("The number of your dice should bigger than 0.")
+			else:
+				break
+		except ValueError:
+			print("The number you enter is not an interger.")
+	
+	return answer
 
 def float_input(prompt):
 	while True:
@@ -40,9 +56,3 @@ def float_input(prompt):
 			return answer
 		except ValueError:
 			print("That's isn't a real number, please try again.")
-
-def truncate(number, digits):
-	number = number * (10 ** digits)
-	number = math.floor(number)
-	number = number / (10 ** digits)
-	return number

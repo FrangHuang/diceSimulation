@@ -22,8 +22,8 @@ def int_inputside(prompt):
 		answer = raw_input(prompt)
 		try:
 			answer = int(answer)
-			if answer < 4:
-				print("Your dice should have more than 3 faces.")
+			if answer < 2:
+				print("Your dice should have more than 1 faces.")
 			else:
 				break
 		except ValueError:
